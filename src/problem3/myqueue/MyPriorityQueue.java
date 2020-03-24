@@ -58,4 +58,11 @@ public class MyPriorityQueue<E> {
             return item;
         }
     }
+    public E element() {
+        if (front == null)
+            throw new NoSuchElementException("Queue Is Empty");
+        else {
+            return front.getData();
+        }
+    }
 }
