@@ -45,4 +45,15 @@ public class MyPriorityQueue<E> {
             return front.getData();
         }
     }
+
+    public E remove() {
+        if (front == null) {
+            return null;
+        } else {
+            E item = peek();
+            front = front.getNext();
+            size--;
+            return item;
+        }
+    }
 }
