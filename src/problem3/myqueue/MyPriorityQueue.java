@@ -13,7 +13,7 @@ import java.util.NoSuchElementException;
 public class MyPriorityQueue<E> {
     private Node<E> front;
     private Node<E> rear;
-    private int size;
+    private  int size;
 
     public boolean offer(E item) {
         if (front == null) {
@@ -64,5 +64,14 @@ public class MyPriorityQueue<E> {
         else {
             return front.getData();
         }
+    }
+    public Node<E> getNode(int index)
+    {
+        Node<E> response = this.front;
+        for (int i = 0; i < index; i++) {
+            response= response.getNext();
+        }
+        return response;
+
     }
 }
