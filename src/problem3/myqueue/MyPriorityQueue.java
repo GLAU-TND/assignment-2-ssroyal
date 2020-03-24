@@ -8,6 +8,8 @@ package problem3.myqueue;
 
 import problem3.node.Node;
 
+import java.util.NoSuchElementException;
+
 public class MyPriorityQueue<E> {
     private Node<E> front;
     private Node<E> rear;
@@ -48,7 +50,7 @@ public class MyPriorityQueue<E> {
 
     public E remove() {
         if (front == null) {
-            return null;
+            throw new NoSuchElementException("Queue is Empty");
         } else {
             E item = peek();
             front = front.getNext();
