@@ -32,7 +32,7 @@ public class MyPriorityQueue<E> {
     public E poll() {
         if(front==null)
         {
-            throw  new NoSuchElementException("Queue is Empty");
+            return null;
         }
         else{
             E temp = front.getData();
