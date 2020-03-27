@@ -47,7 +47,7 @@ public class Student implements Comparable<Student> {
 
     @Override
     public String toString() {
-        return String.valueOf(this.rollNo);
+        return "RollNo:-"+String.valueOf(this.rollNo)+" Name:- "+this.getFirstName()+" "+this.getLastName()+" Section:-" +this.getSection();
     }
 
     @Override
