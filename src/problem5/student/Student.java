@@ -46,6 +46,11 @@ public class Student implements Comparable<Student> {
     }
 
     @Override
+    public String toString() {
+        return String.valueOf(this.rollNo);
+    }
+
+    @Override
     public int compareTo(Student student) {
         return Integer.compare(this.rollNo, student.rollNo);
     }
