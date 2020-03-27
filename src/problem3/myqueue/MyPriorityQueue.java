@@ -11,9 +11,9 @@ import problem5.student.Student;
 import java.util.NoSuchElementException;
 
 public class MyPriorityQueue {
-    private Node front;
-    private Node rear;
-    private  int size;
+    private Node front=null;
+    private Node rear=null;
+    private  int size=0;
 
     public boolean offer( Student item) {
         if (front == null) {
@@ -37,9 +37,7 @@ public class MyPriorityQueue {
             size--;
             return temp;
         }
-
     }
-
     public  Student peek() {
         if (front == null)
             return null;
@@ -47,7 +45,6 @@ public class MyPriorityQueue {
             return front.getData();
         }
     }
-
     public  Student remove() {
         if (front == null) {
             throw new NoSuchElementException("Queue is Empty");
@@ -72,16 +69,23 @@ public class MyPriorityQueue {
             response= response.getNext();
         }
         return response;
-
     }
     private int getRightIndex(Student student)
     {
+        if(this.size==0)
+        {
+             return 0;
+        }
+        else {
+            for (int i = 0; i < this.size; i++) {
+                Student item = getNode(i).getData();
+                int compare = item.compareTo(student);
+                if (compare >= 0)
+                {
+                    return i;
+                }
 
-        for (int i = 0; i < this.size; i++) {
-            Student item = getNode(i).getData();
-            int index =item.compareTo(student);
-            if(index > 0)
-                return i;
+            }
         }
         return size;
 
