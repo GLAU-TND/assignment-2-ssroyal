@@ -5,7 +5,6 @@
  *  Time: 7:15 PM
  */
 package problem3.myqueue;
-
 import problem3.node.Node;
 import problem5.student.Student;
 
@@ -66,13 +65,25 @@ public class MyPriorityQueue {
             return front.getData();
         }
     }
-    public Node getNode(int index)
+    private Node getNode(int index)
     {
         Node response = this.front;
         for (int i = 0; i < index; i++) {
             response= response.getNext();
         }
         return response;
+
+    }
+    private int getRightIndex(Student student)
+    {
+
+        for (int i = 0; i < this.size; i++) {
+            Student item = getNode(i).getData();
+            int index =item.compareTo(student);
+            if(index > 0)
+                return i;
+        }
+        return size;
 
     }
 }
