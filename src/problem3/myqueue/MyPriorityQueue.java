@@ -7,32 +7,33 @@
 package problem3.myqueue;
 
 import problem3.node.Node;
+import problem5.student.Student;
 
 import java.util.NoSuchElementException;
 
-public class MyPriorityQueue<E> {
-    private Node<E> front;
-    private Node<E> rear;
+public class MyPriorityQueue {
+    private Node front;
+    private Node rear;
     private  int size;
 
-    public boolean offer(E item) {
+    public boolean offer( Student item) {
         if (front == null) {
-            rear = new Node<>(item);
+            rear = new Node(item);
             front = rear;
 
         } else {
-            rear.setNext(new Node<>(item));
+            rear.setNext(new Node(item));
             rear = rear.getNext();
         }
         size++;
         return true;
     }
 
-    public E poll() {
+    public Student poll() {
         if (front == null) {
             return null;
         } else {
-            E temp = front.getData();
+            Student temp = front.getData();
             front = front.getNext();
             size--;
             return temp;
@@ -40,7 +41,7 @@ public class MyPriorityQueue<E> {
 
     }
 
-    public E peek() {
+    public  Student peek() {
         if (front == null)
             return null;
         else {
@@ -48,26 +49,26 @@ public class MyPriorityQueue<E> {
         }
     }
 
-    public E remove() {
+    public  Student remove() {
         if (front == null) {
             throw new NoSuchElementException("Queue is Empty");
         } else {
-            E item = peek();
+             Student item = peek();
             front = front.getNext();
             size--;
             return item;
         }
     }
-    public E element() {
+    public  Student element() {
         if (front == null)
             throw new NoSuchElementException("Queue Is Empty");
         else {
             return front.getData();
         }
     }
-    public Node<E> getNode(int index)
+    public Node getNode(int index)
     {
-        Node<E> response = this.front;
+        Node response = this.front;
         for (int i = 0; i < index; i++) {
             response= response.getNext();
         }
