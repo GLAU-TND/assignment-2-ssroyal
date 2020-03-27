@@ -15,16 +15,38 @@ public class MyPriorityQueue {
     private Node rear=null;
     private  int size=0;
 
-    public boolean offer( Student item) {
-        if (front == null) {
-            rear = new Node(item);
-            front = rear;
+    public boolean offer(Student student)
+    {
+        int index = getRightIndex(student);
+        if(index ==0)
+        {
+            if(front==null) {
+                front = new Node(student);
+                rear = front;
+                size++;
+            }
+            else
+            {
+                Node newNextNode = front;
+                front = new Node(student,newNextNode);
+                size++;
+            }
 
-        } else {
-            rear.setNext(new Node(item));
-            rear = rear.getNext();
         }
+        else if(index >0 && index<size)
+        {
+         Node newNextNode = getNode(index);
+         getNode(index-1).setNext(new Node (student,newNextNode));
+         size++;
+        }
+        else if(index==size)
+    {
+        Node newPreviousNode = getNode(index-1);
+        Node newNode =new Node(student);
+        newPreviousNode.setNext(new Node(student));
+        rear= newNode;
         size++;
+    }
         return true;
     }
 
