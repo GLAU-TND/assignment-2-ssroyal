@@ -29,7 +29,15 @@ public class MyMain {
         queue.offer(st3);
 
         System.out.println(queue);
+        System.out.println();
         queue.remove();
+        System.out.println();
+        System.out.println(queue);
+        System.out.println();
+        queue.offer(st1);
+        queue.offer(st4);
+        queue.offer(st3);
+
         System.out.println(queue);
 
     }
