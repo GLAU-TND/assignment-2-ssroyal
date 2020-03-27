@@ -4,15 +4,17 @@ public class Student implements Comparable<Student> {
     private int rollNo;
     private String firstName;
     private String lastName;
-    private String section;
+    private int backLog;
 
-    public Student(int rollNo, String firstName, String lastName, String section) {
+    public Student(int rollNo, String firstName, String lastName, int backLog) {
         this.rollNo = rollNo;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.section = section;
+        this.backLog = backLog;
     }
-
+    public int getBackLog() {
+        return backLog;
+    }
     public int getRollNo() {
         return rollNo;
     }
@@ -37,17 +39,11 @@ public class Student implements Comparable<Student> {
         this.lastName = lastName;
     }
 
-    public String getSection() {
-        return section;
-    }
-
-    public void setSection(String section) {
-        this.section = section;
-    }
 
     @Override
     public String toString() {
-        return "RollNo:-"+String.valueOf(this.rollNo)+" Name:- "+this.getFirstName()+" "+this.getLastName()+" Section:-" +this.getSection();
+        return "RollNo:-"+ this.getRollNo() +" Name:- "+this.getFirstName()+" "+this.getLastName()
+                +"backLogs"+this.getBackLog();
     }
 
     @Override
