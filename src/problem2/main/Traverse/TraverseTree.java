@@ -4,7 +4,7 @@ import problem1.node.TreeNode;
 
 public class TraverseTree {
 
-    void getPrefixOrder(TreeNode node) {
+    public void getPrefixOrder(TreeNode node) {
 
         if (node == null)
 
@@ -17,7 +17,7 @@ public class TraverseTree {
         getPrefixOrder(node.getRight());
 
     }
-    void getPostOrder(TreeNode node) {
+    public void getPostOrder(TreeNode node) {
 
         if (node == null)
 
@@ -30,7 +30,7 @@ public class TraverseTree {
         System.out.print(node.getData() + "  ");
 
     }
-    void getInfixOrder(TreeNode node) {
+    public void getInfixOrder(TreeNode node) {
 
         if (node == null)
 
