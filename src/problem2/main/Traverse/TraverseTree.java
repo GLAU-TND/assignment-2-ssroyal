@@ -30,5 +30,18 @@ public class TraverseTree {
         System.out.print(node.getData() + "  ");
 
     }
+    void getInfixOrder(TreeNode node) {
+
+        if (node == null)
+
+            return;
+
+        getInfixOrder(node.getLeft());
+
+        System.out.print(node.getData() + " ");
+
+        getInfixOrder(node.getRight());
+
+    }
 
 }
