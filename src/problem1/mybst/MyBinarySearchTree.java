@@ -19,15 +19,27 @@ public class MyBinarySearchTree {
 
             return new TreeNode(x);
 
-        else if (x > root.getData()) // x is greater. Should be inserted to right
+        else if (x > root.getData())
 
             root.setRight(insert(root.getRight(), x));
 
-        else // x is smaller should be inserted to left
-
+        else
             root.setLeft(insert(root.getLeft(), x));
 
         return root;
+
+    }
+    public void inorderRec(TreeNode root) {
+
+        if (root.getLeft() != null) {
+
+            inorderRec(root.getLeft());
+
+            System.out.println(root.getData());
+
+            inorderRec(root.getRight());
+
+        }
 
     }
 
