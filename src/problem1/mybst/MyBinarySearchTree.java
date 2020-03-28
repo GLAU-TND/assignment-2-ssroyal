@@ -90,4 +90,33 @@ public class MyBinarySearchTree {
 
     }
 
+    public void printLeftTree(TreeNode root) {
+        if (root == null) {
+            return;
+        }
+        myQueue.add(root);
+        myQueue.add(null);
+        while (myQueue.size() > 0) {
+            TreeNode temp = myQueue.peek();
+            if (temp != null) {
+                System.out.print(temp.getData() + " ");
+                while (myQueue.peek() != null) {
+
+                    if (temp.getLeft() != null)
+                        myQueue.add(temp.getLeft());
+
+                    if (temp.getRight() != null) {
+                        myQueue.add(temp.getRight());
+                    }
+                    myQueue.remove();
+                    temp = myQueue.peek();
+                }
+                myQueue.add(null);
+            }
+            myQueue.remove();
+
+        }
+
+    }
+
 }
