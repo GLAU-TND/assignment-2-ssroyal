@@ -29,6 +29,7 @@ public class MyMain {
         myTree.insert(rootNode, 81);
         myTree.insert(rootNode, 39);
         myTree.insert(rootNode, 54);
+        myTree.insert(rootNode,12);
 
         myTree.leftView(rootNode);
     }
