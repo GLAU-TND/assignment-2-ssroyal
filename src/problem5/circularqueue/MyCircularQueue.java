@@ -18,6 +18,20 @@ public class MyCircularQueue {
         rear = null;
         size = 0;
     }
+    public void enqueue(Student data) {
+        Node node = new Node(data);
+        if (isEmpty()) {
+            rear = node;
+            size++;
+            node.setNext(node);
+        } else {
+            node.setNext(rear.getNext());
+            rear.setNext(node);
+            rear = node;
+            size++;
+        }
+
+    }
     private static boolean isEmpty() {
         boolean response = false;
         if (rear == null)
