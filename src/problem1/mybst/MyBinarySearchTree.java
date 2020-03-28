@@ -118,5 +118,10 @@ public class MyBinarySearchTree {
         }
 
     }
+    public void leftView(TreeNode root) {
+        myQueue = new LinkedList<TreeNode>();
+        printLeftTree(root);
+
+    }
 
 }
