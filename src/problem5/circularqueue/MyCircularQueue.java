@@ -48,6 +48,13 @@ public class MyCircularQueue {
     public static void setSize(int size) {
         MyCircularQueue.size = size;
     }
+    public Node peek() {
+        Node response = null;
+        if (!isEmpty()) {
+            response = rear.getNext();
+        }
+        return response;
+    }
 
     private static boolean isEmpty() {
         boolean response = false;
