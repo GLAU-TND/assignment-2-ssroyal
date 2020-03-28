@@ -62,5 +62,21 @@ public class MyCircularQueue {
             response = true;
         return response;
     }
-
+    public int remove() {
+        int k = 0;
+        int l = 0;
+        Node head = rear.getNext();
+        while (l < size) {
+            if (head.getData().getBackLog() == 0) {
+                ++k;
+                System.out.println(head.getData().getFirstName()+" "+head.getData().getLastName());
+                head = head.getNext();
+                ++l;
+            } else {
+                head = head.getNext();
+                ++l;
+            }
+        }
+        return k;
+    }
 }
