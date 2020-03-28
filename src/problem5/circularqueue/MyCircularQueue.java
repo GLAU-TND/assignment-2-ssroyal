@@ -32,6 +32,23 @@ public class MyCircularQueue {
         }
 
     }
+
+    public static Node getRear() {
+        return rear;
+    }
+
+    public static void setRear(Node rear) {
+        MyCircularQueue.rear = rear;
+    }
+
+    public static int getSize() {
+        return size;
+    }
+
+    public static void setSize(int size) {
+        MyCircularQueue.size = size;
+    }
+
     private static boolean isEmpty() {
         boolean response = false;
         if (rear == null)
