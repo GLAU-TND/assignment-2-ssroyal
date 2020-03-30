@@ -19,21 +19,28 @@ public class MyQueue {
     }
 
     public void enqueue(int data) {
-        Node ns= new Node(data);
+        Node newNode= new Node(data);
         if (front == null) {
-            front = rear = ns;
+            front = rear = newNode;
         } else {
-            rear.setNext(ns);
-            rear = ns;
+            rear.setNext(newNode);
+            rear = newNode;
         }
     }
-    public void preSuccessor(TreeNode root) {
+    public void storePreSuccessor(TreeNode root) {
         if (root == null)
             return;
         else {
             enqueue(root.getData());
-            preSuccessor(root.getLeft());
-            preSuccessor(root.getRight());
+            storePreSuccessor(root.getLeft());
+            storePreSuccessor(root.getRight());
+        }
+    }
+    public void printQueue() {
+        Node temp = front;
+        while (temp != null) {
+            System.out.print(temp.getData() + "\t");
+            temp = temp.getNext();
         }
     }
 
