@@ -17,14 +17,11 @@ public class MyQueue {
     }
 
     private static class Node {
-        int data;
-        Node next;
+        private Node next;
+        private int data;
 
-        public int getData() {
-            return data;
-        }
 
-        public void setData(int data) {
+        public Node( int data) {
             this.data = data;
         }
 
@@ -36,5 +33,17 @@ public class MyQueue {
             this.next = next;
         }
 
+        public int getData() {
+            return data;
+        }
+
+        public void setData(int data) {
+            this.data = data;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(this.getData());
+        }
     }
 }
