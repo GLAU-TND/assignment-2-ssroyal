@@ -16,6 +16,16 @@ public class MyQueue {
         rear = null;
     }
 
+    public void enqueue(int data) {
+        Node ns= new Node(data);
+        if (front == null) {
+            front = rear = ns;
+        } else {
+            rear.setNext(ns);
+            rear = ns;
+        }
+    }
+
     private static class Node {
         private Node next;
         private int data;
