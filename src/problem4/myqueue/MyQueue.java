@@ -7,6 +7,8 @@
 package problem4.myqueue;
 // to create queue to store pre - order successor
 
+import problem1.node.TreeNode;
+
 public class MyQueue {
     private Node front;
     private Node rear;
@@ -23,6 +25,15 @@ public class MyQueue {
         } else {
             rear.setNext(ns);
             rear = ns;
+        }
+    }
+    public void preSuccessor(TreeNode root) {
+        if (root == null)
+            return;
+        else {
+            enqueue(root.getData());
+            preSuccessor(root.getLeft());
+            preSuccessor(root.getRight());
         }
     }
 
